@@ -329,41 +329,6 @@ body::before {
     font-size: 0.95rem;
 }
 
-/* ========== TECH MARQUEE ========== */
-.tech-marquee {
-    overflow: hidden;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.marquee-track {
-    display: flex;
-    gap: 3rem;
-    animation: marquee 25s linear infinite;
-}
-
-.marquee-track span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 2rem;
-    opacity: 0.6;
-    flex-shrink: 0;
-    transition: color 0.3s;
-}
-
-.marquee-track span:hover {
-    color: var(--accent);
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
 /* ========== JOURNEY (Featured + Grid) ========== */
 .journey-featured {
     margin-bottom: 2.5rem;
