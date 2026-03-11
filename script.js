@@ -130,7 +130,7 @@ if (nav) {
     });
 }
 
-// ========== SMOOTH SCROLL ==========
+// ========== SMOOTH SCROLL + PAGE TRANSITIONS ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -140,7 +140,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             return;
         }
         const target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target) {
+            target.classList.add('transition-in');
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => target.classList.remove('transition-in'), 600);
+        }
+    });
+});
+
+// ========== PROJECT FILTER TABS ==========
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project-card').forEach(card => {
+            const cat = card.dataset.category;
+            if (filter === 'all' || cat === filter) {
+                card.classList.remove('filtered-out');
+            } else {
+                card.classList.add('filtered-out');
+            }
+        });
+    });
+});
+
+// ========== PARALLAX SCROLLING ==========
+const parallaxEls = document.querySelectorAll('.parallax-slow');
+function updateParallax() {
+    parallaxEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const centerY = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        const offset = (centerY - viewportCenter) * 0.08;
+        el.style.transform = `translateY(${offset}px)`;
+    });
+}
+
+window.addEventListener('scroll', updateParallax);
+window.addEventListener('load', updateParallax);
+
+// ========== MAGNETIC BUTTONS ==========
+document.querySelectorAll('.btn-magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const moveX = x * 0.15;
+        const moveY = y * 0.15;
+        btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
     });
 });
 
