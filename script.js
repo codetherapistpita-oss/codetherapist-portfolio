@@ -1,3 +1,13 @@
+// ========== SCROLL PROGRESS BAR ==========
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        scrollProgress.style.width = height > 0 ? (winScroll / height) * 100 + '%' : '0%';
+    });
+}
+
 // ========== SPLASH SCREEN ==========
 const splash = document.getElementById('splash');
 if (splash) {

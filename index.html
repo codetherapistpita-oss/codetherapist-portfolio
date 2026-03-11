@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="custom-cursor">
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
     <!-- Splash Screen -->
@@ -127,43 +128,51 @@
         <div class="container">
             <h2 class="section-title reveal"><i class="fa-solid fa-timeline"></i> My Journey</h2>
             <p class="section-sub reveal">Career & education</p>
-            <div class="journey-columns">
-                <div class="journey-column reveal">
-                    <h3 class="journey-column-title"><i class="fa-solid fa-briefcase"></i> Work & Experience</h3>
-                    <div class="journey-card journey-card-featured">
-                        <span class="journey-date">2024 – Present</span>
-                        <h4>Founder & Developer</h4>
-                        <h5>CODE THERAPIST EMPIRE</h5>
-                        <p>Building a startup focused on software solutions and digital products. Creating tools that bring ideas to life through code.</p>
+            <!-- Work: featured full-width card (no more empty column) -->
+            <div class="journey-featured reveal">
+                <div class="journey-featured-card">
+                    <div class="journey-featured-badge"><i class="fa-solid fa-briefcase"></i> Work & Experience</div>
+                    <span class="journey-date">2024 – Present</span>
+                    <h4>Founder & Developer</h4>
+                    <h5>CODE THERAPIST EMPIRE</h5>
+                    <p>Building a startup focused on software solutions and digital products. Creating tools that bring ideas to life through code.</p>
+                    <div class="journey-tags">
+                        <span>Web Development</span>
+                        <span>AI Solutions</span>
+                        <span>Full-Stack</span>
+                        <span>Startup</span>
                     </div>
                 </div>
-                <div class="journey-column reveal">
-                    <h3 class="journey-column-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-                    <div class="journey-card">
+            </div>
+            <!-- Education: balanced grid -->
+            <div class="journey-education reveal">
+                <h3 class="journey-column-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="journey-edu-grid">
+                    <div class="journey-card journey-edu-card">
                         <span class="journey-date">Current</span>
                         <h4>B.Sc. Computer Science</h4>
                         <h5>Kampala International University (KIU)</h5>
-                        <p>Completing my Bachelor's degree in Computer Science.</p>
+                        <p>Completing my Bachelor's degree.</p>
                     </div>
-                    <div class="journey-card">
+                    <div class="journey-card journey-edu-card">
                         <span class="journey-date">A-Level</span>
                         <h4>St Joseph's SS Nkoni</h4>
-                        <p>Advanced Level education.</p>
+                        <p>Advanced Level.</p>
                     </div>
-                    <div class="journey-card">
+                    <div class="journey-card journey-edu-card">
                         <span class="journey-date">O-Level</span>
                         <h4>Bukalasa Minor Seminary</h4>
-                        <p>Ordinary Level education.</p>
+                        <p>Ordinary Level.</p>
                     </div>
-                    <div class="journey-card">
+                    <div class="journey-card journey-edu-card">
                         <span class="journey-date">Primary</span>
-                        <h4>St Kizito Kyamulibwa Primary School</h4>
-                        <p>Primary education foundation.</p>
+                        <h4>St Kizito Kyamulibwa</h4>
+                        <p>Primary School.</p>
                     </div>
-                    <div class="journey-card">
-                        <span class="journey-date">Nursery & Kindergarten</span>
-                        <h4>Marksion Bay Kindergarten, Luzira</h4>
-                        <p>Early childhood education.</p>
+                    <div class="journey-card journey-edu-card">
+                        <span class="journey-date">Nursery</span>
+                        <h4>Marksion Bay Kindergarten</h4>
+                        <p>Luzira.</p>
                     </div>
                 </div>
             </div>
