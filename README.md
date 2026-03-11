@@ -24,6 +24,11 @@ A personal portfolio website showcasing my work as a creative developer. Built w
 
 I'm a passionate developer with a keen eye for design. I write C# & Unity, build AI agents, code Python, and work with PHP, Node.js, and Express.js. I love creating things that live on the web.
 
+## ⚙️ Setup Notes
+
+- **Contact form:** Replace `YOUR_FORM_ID` in the form action with your [Formspree](https://formspree.io) form ID to receive messages.
+- **CV download:** Add your `cv.pdf` file to the project folder for the Download CV button to work.
+
 ## 📫 Connect
 
 - [GitHub](https://github.com/codetherapistpita-oss)

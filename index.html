@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="custom-cursor">
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- Splash Screen -->
+    <div class="splash" id="splash">
+        <div class="splash-content">
+            <span class="splash-logo">codetherapist</span>
+            <div class="splash-loader"></div>
+        </div>
+    </div>
     <nav class="animate-on-load">
         <div class="container">
             <a href="#" class="logo">codetherapist</a>
-            <button class="menu-toggle" aria-label="Toggle menu">
+            <div class="nav-right">
+                <button class="theme-toggle" aria-label="Toggle theme" title="Dark / Light mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
                 <li><a href="#projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+                <li><a href="#testimonials"><i class="fa-solid fa-quote-left"></i> Reviews</a></li>
                 <li><a href="#skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</a></li>
+                <li><a href="#blog"><i class="fa-solid fa-newspaper"></i> Blog</a></li>
                 <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
             </ul>
         </div>
@@ -33,12 +50,12 @@
             <div class="hero-content">
                 <span class="hero-badge animate-delay-1"><i class="fa-solid fa-sparkles"></i> Available for work</span>
                 <span class="tag animate-delay-2">Hello, I'm</span>
-                <h1 class="animate-delay-3">A Creative <span>Developer</span></h1>
+                <h1 class="animate-delay-3">A Creative <span class="typed-text" data-words="Developer,Designer,Builder,Problem Solver"></span><span class="typed-cursor">|</span></h1>
                 <p class="animate-delay-4">I craft beautiful digital experiences and bring ideas to life through clean code and thoughtful design. Let's build something amazing together.</p>
                 <div class="hero-buttons animate-delay-5">
-                    <a href="#projects" class="btn"><i class="fa-solid fa-briefcase"></i> View My Work</a>
-                    <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
-                    <a href="#" class="btn btn-ghost"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+                    <a href="#projects" class="btn btn-ripple"><i class="fa-solid fa-briefcase"></i> View My Work</a>
+                    <a href="#contact" class="btn btn-outline btn-ripple"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+                    <a href="cv.pdf" download class="btn btn-ghost btn-ripple"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
                 </div>
                 <div class="hero-social animate-delay-6">
                     <a href="https://github.com/codetherapistpita-oss" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -87,23 +104,23 @@
         <div class="container">
             <h2 class="section-title reveal"><i class="fa-solid fa-layer-group"></i> Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-lightbox data-title="Project One" data-desc="A sleek web application built with modern technologies. Focus on user experience and performance." data-link="#" data-tech="HTML, CSS, JavaScript">
                     <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>Project One</h3>
                     <p>A sleek web application built with modern technologies. Focus on user experience and performance.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
+                    <button class="project-view-btn" type="button"><i class="fa-solid fa-expand"></i> View Details</button>
                 </div>
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-lightbox data-title="Project Two" data-desc="An interactive dashboard for data visualization. Clean interfaces that make complex data simple." data-link="#" data-tech="React, Node.js, Chart.js">
                     <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Project Two</h3>
                     <p>An interactive dashboard for data visualization. Clean interfaces that make complex data simple.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
+                    <button class="project-view-btn" type="button"><i class="fa-solid fa-expand"></i> View Details</button>
                 </div>
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-lightbox data-title="Project Three" data-desc="A mobile-first landing page with smooth animations and responsive design throughout." data-link="#" data-tech="HTML, CSS, Vanilla JS">
                     <div class="project-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                     <h3>Project Three</h3>
                     <p>A mobile-first landing page with smooth animations and responsive design throughout.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
+                    <button class="project-view-btn" type="button"><i class="fa-solid fa-expand"></i> View Details</button>
                 </div>
             </div>
             <div class="section-cta reveal">
@@ -112,22 +129,73 @@
         </div>
     </section>
 
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal"><i class="fa-solid fa-quote-left"></i> What People Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>"Peter delivered exactly what we needed—clean code, on time, and with great communication. Highly recommend!"</p>
+                    <div class="testimonial-author">— Client A</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>"A talented developer who brings creativity and technical skill to every project. Looking forward to working together again."</p>
+                    <div class="testimonial-author">— Client B</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>"Professional, responsive, and innovative. The final product exceeded our expectations."</p>
+                    <div class="testimonial-author">— Client C</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <div class="container">
             <h2 class="section-title reveal"><i class="fa-solid fa-screwdriver-wrench"></i> Skills & Tools</h2>
-            <div class="skills-flex">
-                <span class="skill-tag reveal"><i class="fa-brands fa-html5"></i> HTML</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-css3-alt"></i> CSS</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-js"></i> JavaScript</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-node-js"></i> Node.js</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-php"></i> PHP</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-unity"></i> C# & Unity</span>
-                <span class="skill-tag reveal"><i class="fa-solid fa-robot"></i> AI Agents</span>
-                <span class="skill-tag reveal"><i class="fa-solid fa-database"></i> MySQL</span>
-                <span class="skill-tag reveal"><i class="fa-solid fa-mobile-screen"></i> Responsive</span>
-                <span class="skill-tag reveal"><i class="fa-solid fa-palette"></i> UI/UX</span>
-                <span class="skill-tag reveal"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <div class="skills-progress reveal">
+                <div class="skill-row"><span><i class="fa-brands fa-html5"></i> HTML / CSS</span><div class="skill-bar"><div class="skill-fill" data-level="92"></div></div><span class="skill-pct">92%</span></div>
+                <div class="skill-row"><span><i class="fa-brands fa-js"></i> JavaScript</span><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div><span class="skill-pct">88%</span></div>
+                <div class="skill-row"><span><i class="fa-brands fa-python"></i> Python</span><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div><span class="skill-pct">85%</span></div>
+                <div class="skill-row"><span><i class="fa-brands fa-node-js"></i> Node.js</span><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div><span class="skill-pct">82%</span></div>
+                <div class="skill-row"><span><i class="fa-brands fa-php"></i> PHP</span><div class="skill-bar"><div class="skill-fill" data-level="80"></div></div><span class="skill-pct">80%</span></div>
+                <div class="skill-row"><span><i class="fa-brands fa-unity"></i> C# & Unity</span><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div><span class="skill-pct">78%</span></div>
+                <div class="skill-row"><span><i class="fa-solid fa-robot"></i> AI / Automation</span><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div><span class="skill-pct">75%</span></div>
+                <div class="skill-row"><span><i class="fa-solid fa-database"></i> MySQL</span><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div><span class="skill-pct">85%</span></div>
+            </div>
+            <div class="skills-tags reveal">
+                <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive</span>
+                <span class="skill-tag"><i class="fa-solid fa-palette"></i> UI/UX</span>
+                <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title reveal"><i class="fa-solid fa-newspaper"></i> Latest Thoughts</h2>
+            <p class="section-sub reveal">Articles and insights from my journey</p>
+            <div class="blog-grid">
+                <a href="https://dev.to" target="_blank" rel="noopener" class="blog-card reveal">
+                    <div class="blog-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Building Better Apps</h3>
+                    <p>Tips for clean code and maintainable projects</p>
+                    <span class="blog-link">Read more <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="https://medium.com" target="_blank" rel="noopener" class="blog-card reveal">
+                    <div class="blog-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI in Development</h3>
+                    <p>How AI agents are changing the way we code</p>
+                    <span class="blog-link">Read more <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="https://github.com/codetherapistpita-oss" target="_blank" rel="noopener" class="blog-card reveal">
+                    <div class="blog-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Open Source Journey</h3>
+                    <p>Contributions and learnings from the community</p>
+                    <span class="blog-link">Read more <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
@@ -135,7 +203,14 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title reveal"><i class="fa-solid fa-comments"></i> Let's Connect</h2>
-            <p class="reveal">Have a project in mind or just want to say hi? I'd love to hear from you. Drop me a line!</p>
+            <p class="reveal">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+            <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                <input type="text" name="name" placeholder="Your Name" required minlength="2">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required minlength="10"></textarea>
+                <button type="submit" class="btn btn-ripple"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            </form>
+            <p class="contact-divider reveal">— or reach me directly —</p>
             <div class="contact-links reveal">
                 <a href="https://wa.me/256762426842" target="_blank" rel="noopener" class="contact-btn whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 <a href="mailto:codetheerapist.pita@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email</a>
@@ -157,6 +232,18 @@
             <p class="footer-tagline">Let's build something amazing together.</p>
         </div>
     </footer>
+
+    <!-- Project Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <h3 class="lightbox-title"></h3>
+            <p class="lightbox-desc"></p>
+            <p class="lightbox-tech"></p>
+            <a href="#" class="btn lightbox-link" target="_blank" rel="noopener">View Project</a>
+        </div>
+    </div>
 
     <!-- Floating WhatsApp - tap to chat -->
     <a href="https://wa.me/256762426842" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
